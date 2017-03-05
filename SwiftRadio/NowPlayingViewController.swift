@@ -62,7 +62,7 @@ class NowPlayingViewController: UIViewController {
         currentStation = RadioStation(
             name: "Maxi80",
             streamURL: "http://audio1.maxi80.com",
-            imageURL: "station-sub.png",
+            imageURL: "station-maxi80.png",
             desc: "La radio de toute une generation",
             longDesc: "Le meilleur de la musique des années 80"
         )
@@ -461,19 +461,7 @@ class NowPlayingViewController: UIViewController {
     //*****************************************************************
     // MARK: - Segue
     //*****************************************************************
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        if segue.identifier == "InfoDetail" {
-            let infoController = segue.destination as! InfoDetailViewController
-            infoController.currentStation = currentStation
-        }
-    }
-    
-    @IBAction func infoButtonPressed(_ sender: UIButton) {
-        performSegue(withIdentifier: "InfoDetail", sender: self)
-    }
-    
     @IBAction func shareButtonPressed(_ sender: UIButton) {
         let songToShare = "I'm listening to \(track.title) on \(currentStation.stationName) via Swift Radio Pro"
         let activityViewController = UIActivityViewController(activityItems: [songToShare, track.artworkImage!], applicationActivities: nil)

@@ -12,17 +12,14 @@
 		9409E1241ABF6FEA00312E2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1221ABF6FEA00312E2B /* Main.storyboard */; };
 		9409E1261ABF6FEA00312E2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1251ABF6FEA00312E2B /* Images.xcassets */; };
 		9409E1401ABF78B000312E2B /* NowPlayingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409E13F1ABF78B000312E2B /* NowPlayingViewController.swift */; };
-		942A3F371AE43DF80011396E /* StationsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 942A3F361AE43DF80011396E /* StationsViewController.swift */; };
 		94452E4F1AD6F24700BFE7A5 /* PopUpMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94452E4E1AD6F24700BFE7A5 /* PopUpMenuViewController.swift */; };
 		94452E551AD7086800BFE7A5 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94452E541AD7086800BFE7A5 /* AboutViewController.swift */; };
 		945DB3C21AD58E3A00495EBB /* stations.json in Resources */ = {isa = PBXBuildFile; fileRef = 945DB3C11AD58E3A00495EBB /* stations.json */; };
-		945DB3C51AD5A6E200495EBB /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 945DB3C41AD5A6E200495EBB /* NothingFoundCell.xib */; };
 		94817DFB1B547D5700D3FA23 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94817DFA1B547D5700D3FA23 /* Player.swift */; };
 		949BBB401ACC9DEE005B7C26 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949BBB3F1ACC9DEE005B7C26 /* DataManager.swift */; };
 		949E5EB01ACB340200AB6280 /* UIImageView+Download.swift in Sources */ = {isa = PBXBuildFile; fileRef = 949E5EAF1ACB340200AB6280 /* UIImageView+Download.swift */; };
 		94AC70AE1AD05C6200652982 /* RadioStation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94AC70AD1AD05C6200652982 /* RadioStation.swift */; };
-		94D1D0A51AD6D6230022CA11 /* InfoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D1D0A41AD6D6230022CA11 /* InfoDetailViewController.swift */; };
-		94D260911B45D20000DE671C /* SwiftRadio-Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */; };
+		94D260911B45D20000DE671C /* Maxi80-Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260901B45D20000DE671C /* Maxi80-Settings.swift */; };
 		94D260961B45E3FA00DE671C /* AnimationFrames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260951B45E3FA00DE671C /* AnimationFrames.swift */; };
 		94D260981B45E8B800DE671C /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260971B45E8B800DE671C /* Track.swift */; };
 		94D30EA71AD07A880024FE96 /* StationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D30EA61AD07A880024FE96 /* StationTableViewCell.swift */; };
@@ -79,7 +76,6 @@
 		9409E1231ABF6FEA00312E2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9409E1251ABF6FEA00312E2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9409E13F1ABF78B000312E2B /* NowPlayingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NowPlayingViewController.swift; sourceTree = "<group>"; };
-		942A3F361AE43DF80011396E /* StationsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationsViewController.swift; sourceTree = "<group>"; };
 		94452E4E1AD6F24700BFE7A5 /* PopUpMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopUpMenuViewController.swift; sourceTree = "<group>"; };
 		94452E541AD7086800BFE7A5 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		945DB3C11AD58E3A00495EBB /* stations.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = stations.json; sourceTree = "<group>"; };
@@ -88,8 +84,7 @@
 		949BBB3F1ACC9DEE005B7C26 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		949E5EAF1ACB340200AB6280 /* UIImageView+Download.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Download.swift"; sourceTree = "<group>"; };
 		94AC70AD1AD05C6200652982 /* RadioStation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadioStation.swift; sourceTree = "<group>"; };
-		94D1D0A41AD6D6230022CA11 /* InfoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoDetailViewController.swift; sourceTree = "<group>"; };
-		94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftRadio-Settings.swift"; sourceTree = "<group>"; };
+		94D260901B45D20000DE671C /* Maxi80-Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Maxi80-Settings.swift"; sourceTree = "<group>"; };
 		94D260951B45E3FA00DE671C /* AnimationFrames.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationFrames.swift; sourceTree = "<group>"; };
 		94D260971B45E8B800DE671C /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		94D30EA61AD07A880024FE96 /* StationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StationTableViewCell.swift; sourceTree = "<group>"; };
@@ -158,8 +153,7 @@
 		9409E10D1ABF6FE900312E2B = {
 			isa = PBXGroup;
 			children = (
-				B90086461BBE40AF00E5372C /* MediaPlayer.framework */,
-				9409E1181ABF6FEA00312E2B /* SwiftRadio */,
+				9409E1181ABF6FEA00312E2B /* Maxi80 */,
 				949BBB411ACCA2B6005B7C26 /* Libraries */,
 				2C5545BB1C1124DE00728469 /* SwiftRadioUITests */,
 				9409E1171ABF6FEA00312E2B /* Products */,
@@ -175,7 +169,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9409E1181ABF6FEA00312E2B /* SwiftRadio */ = {
+		9409E1181ABF6FEA00312E2B /* Maxi80 */ = {
 			isa = PBXGroup;
 			children = (
 				94D2608E1B45D0F800DE671C /* ViewControllers */,
@@ -189,6 +183,7 @@
 				9409E1191ABF6FEA00312E2B /* Supporting Files */,
 				94D260941B45E0BA00DE671C /* UI Helpers */,
 			);
+			name = Maxi80;
 			path = SwiftRadio;
 			sourceTree = "<group>";
 		};
@@ -196,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				9409E11A1ABF6FEA00312E2B /* Info.plist */,
-				94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */,
+				94D260901B45D20000DE671C /* Maxi80-Settings.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -212,6 +207,7 @@
 		949BBB411ACCA2B6005B7C26 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				B90086461BBE40AF00E5372C /* MediaPlayer.framework */,
 				94ECF2661B94D80600D120A8 /* SwiftyJSON.swift */,
 				94DB0A711B98B762005ED993 /* Spring */,
 			);
@@ -230,11 +226,9 @@
 		94D2608E1B45D0F800DE671C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				94452E541AD7086800BFE7A5 /* AboutViewController.swift */,
-				94D1D0A41AD6D6230022CA11 /* InfoDetailViewController.swift */,
 				9409E13F1ABF78B000312E2B /* NowPlayingViewController.swift */,
+				94452E541AD7086800BFE7A5 /* AboutViewController.swift */,
 				94452E4E1AD6F24700BFE7A5 /* PopUpMenuViewController.swift */,
-				942A3F361AE43DF80011396E /* StationsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -362,7 +356,7 @@
 					};
 					9409E1151ABF6FEA00312E2B = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = G24WJ3XCZ3;
+						DevelopmentTeam = 56U756R2L2;
 						LastSwiftMigration = 0810;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
@@ -405,7 +399,6 @@
 			files = (
 				945DB3C21AD58E3A00495EBB /* stations.json in Resources */,
 				9409E1241ABF6FEA00312E2B /* Main.storyboard in Resources */,
-				945DB3C51AD5A6E200495EBB /* NothingFoundCell.xib in Resources */,
 				94DB0A9F1B98B762005ED993 /* LoadingView.xib in Resources */,
 				94DB0A9C1B98B762005ED993 /* Info.plist in Resources */,
 				9409E1261ABF6FEA00312E2B /* Images.xcassets in Resources */,
@@ -435,14 +428,13 @@
 				94DB0AA51B98B762005ED993 /* SpringImageView.swift in Sources */,
 				949E5EB01ACB340200AB6280 /* UIImageView+Download.swift in Sources */,
 				94DB0A981B98B762005ED993 /* DesignableTextField.swift in Sources */,
-				94D260911B45D20000DE671C /* SwiftRadio-Settings.swift in Sources */,
+				94D260911B45D20000DE671C /* Maxi80-Settings.swift in Sources */,
 				94DB0A941B98B762005ED993 /* DesignableButton.swift in Sources */,
 				94DB0AA61B98B762005ED993 /* SpringLabel.swift in Sources */,
 				94DB0A901B98B762005ED993 /* AsyncButton.swift in Sources */,
 				94D30EA71AD07A880024FE96 /* StationTableViewCell.swift in Sources */,
 				9409E1401ABF78B000312E2B /* NowPlayingViewController.swift in Sources */,
 				94DB0A911B98B762005ED993 /* AsyncImageView.swift in Sources */,
-				94D1D0A51AD6D6230022CA11 /* InfoDetailViewController.swift in Sources */,
 				949BBB401ACC9DEE005B7C26 /* DataManager.swift in Sources */,
 				94DB0A971B98B762005ED993 /* DesignableTabBarController.swift in Sources */,
 				94E9761C1B1A8F3200F52B1E /* UIImage+DropShadow.swift in Sources */,
@@ -459,7 +451,6 @@
 				94ECF2671B94D80600D120A8 /* SwiftyJSON.swift in Sources */,
 				94D260961B45E3FA00DE671C /* AnimationFrames.swift in Sources */,
 				94DB0A9E1B98B762005ED993 /* LoadingView.swift in Sources */,
-				942A3F371AE43DF80011396E /* StationsViewController.swift in Sources */,
 				94DB0AA41B98B762005ED993 /* SpringButton.swift in Sources */,
 				94DB0A931B98B762005ED993 /* BlurView.swift in Sources */,
 				94DB0AA71B98B762005ED993 /* SpringTextField.swift in Sources */,
@@ -620,6 +611,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 56U756R2L2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftRadio",
@@ -627,7 +619,7 @@
 				INFOPLIST_FILE = SwiftRadio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.matthewfecher.SwiftRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stormacq.sebastien.iphone.maxi80;
 				PRODUCT_NAME = SwiftRadio;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;
@@ -643,6 +635,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 56U756R2L2;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/SwiftRadio",
@@ -650,7 +643,7 @@
 				INFOPLIST_FILE = SwiftRadio/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.matthewfecher.SwiftRadio;
+				PRODUCT_BUNDLE_IDENTIFIER = com.stormacq.sebastien.iphone.maxi80;
 				PRODUCT_NAME = SwiftRadio;
 				PROVISIONING_PROFILE = "";
 				SWIFT_INSTALL_OBJC_HEADER = NO;

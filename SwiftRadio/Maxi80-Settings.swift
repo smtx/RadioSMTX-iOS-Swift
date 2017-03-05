@@ -45,4 +45,5 @@ let useLastFM = true
 
 let apiKey    = "9a267c245324cfa4f887366d497d3dd3"
 let apiSecret = "f1191864d7ae71e580b89238129768b8"
-
+//let apiKey    = "68b1cdeed84205d9f71af3a993d671ee"
+//let apiSecret = "79f9eb7b1a6138e5ae52ecccd126b8ae"
