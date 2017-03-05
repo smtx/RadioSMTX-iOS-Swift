@@ -58,6 +58,16 @@ class NowPlayingViewController: UIViewController {
         // Setup handoff functionality - GH
         setupUserActivity()
         
+        // Add your radio station information here:
+        currentStation = RadioStation(
+            name: "Maxi80",
+            streamURL: "http://audio1.maxi80.com",
+            imageURL: "station-sub.png",
+            desc: "La radio de toute une generation",
+            longDesc: "Le meilleur de la musique des années 80"
+        )
+
+        
         // Set AlbumArtwork Constraints
         optimizeForDeviceSize()
 
