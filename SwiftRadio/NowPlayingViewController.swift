@@ -67,6 +67,8 @@ class NowPlayingViewController: UIViewController {
             longDesc: "Le meilleur de la musique des années 80"
         )
 
+        // Set AVFoundation category, required for background audio
+        setupAudioService()
         
         // Set AlbumArtwork Constraints
         optimizeForDeviceSize()
@@ -192,6 +194,30 @@ class NowPlayingViewController: UIViewController {
         resetAlbumArtwork()
         
         track.isPlaying = true
+    }
+    
+    func setupAudioService() {
+        
+        // Set AVFoundation category, required for background audio
+        var error: NSError?
+        var success: Bool
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            success = true
+        } catch let error1 as NSError {
+            error = error1
+            success = false
+        }
+        if !success {
+            if kDebugLog { print("Failed to set audio session category.  Error: \(error)") }
+        }
+        
+        // Set audioSession as active
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let error2 as NSError {
+            if kDebugLog { print("audioSession setActive error \(error2)") }
+        }
     }
     
     //*****************************************************************
