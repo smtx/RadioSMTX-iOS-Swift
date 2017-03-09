@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import MediaPlayer
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var station: RadioStation!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -20,6 +22,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Make status bar white
         UINavigationBar.appearance().barStyle = .black
+        
+        //initialize radio station data
+        //TODO fetch these data from an API call on api.maxi80.net
+        station = RadioStation(
+            name: "Maxi80",
+            streamURL: "http://audio1.maxi80.com",
+            imageURL: "station-maxi80.png",
+            desc: "La radio de toute une generation",
+            longDesc: "Le meilleur de la musique des années 80"
+        )
+        
+        // Set AVFoundation category, required for background audio
+        setupAudioService()
+        
         
         return true
     }
@@ -55,6 +71,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIApplication.shared.endReceivingRemoteControlEvents()
         
     }
+
+    //*****************************************************************
+    // MARK: - Application Initialization Code
+    //*****************************************************************
+
+    func setupAudioService() {
+        
+        // Set AVFoundation category, required for background audio
+        var error: NSError?
+        var success: Bool
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            success = true
+        } catch let error1 as NSError {
+            error = error1
+            success = false
+        }
+        if !success {
+            if kDebugLog { print("Failed to set audio session category.  Error: \(error)") }
+        }
+        
+        // Set audioSession as active
+        do {
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch let error2 as NSError {
+            if kDebugLog { print("audioSession setActive error \(error2)") }
+        }
+    }
+    
 
    
 }
