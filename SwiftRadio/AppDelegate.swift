@@ -29,7 +29,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             name: "Maxi80",
             streamURL: "http://audio1.maxi80.com",
             imageURL: "station-maxi80.png",
-            desc: "La radio de toute une generation",
+            desc: "La radio de toute une génération",
             longDesc: "Le meilleur de la musique des années 80"
         )
         
