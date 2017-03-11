@@ -12,6 +12,7 @@ class PopUpMenuViewController: UIViewController {
 
     @IBOutlet weak var popupView: UIView!
     @IBOutlet weak var backgroundView: UIImageView!
+    @IBOutlet weak var versionLabel : UILabel!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -35,6 +36,9 @@ class PopUpMenuViewController: UIViewController {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PopUpMenuViewController.closeButtonPressed))
         backgroundView.isUserInteractionEnabled = true
         backgroundView.addGestureRecognizer(gestureRecognizer)
+        
+        // Set version from bundle info
+        versionLabel.text = "Maxi 80 for iOS v\(Bundle.main.versionNumber ?? "") (\(Bundle.main.buildNumber ?? ""))"
     }
     
     //*****************************************************************
@@ -42,12 +46,22 @@ class PopUpMenuViewController: UIViewController {
     //*****************************************************************
 
     @IBAction func closeButtonPressed() {
+        print("Close button pressed")
         dismiss(animated: true, completion: nil)
     }
    
-    @IBAction func websiteButtonPressed(_ sender: UIButton) {
-        // Use your own website URL here
-        if let url = URL(string: "https://github.com/swiftcodex/") {
+    @IBAction func websiteButtonDidTouch(_ sender: UIButton) {
+        
+        // Use your own website here
+        if let url = URL(string: "https://www.maxi80.com") {
+            UIApplication.shared.openURL(url)
+        }
+    }
+        
+    @IBAction func donateButtonDidTouch(_ sender: UIButton) {
+        
+        // Use your own website here
+        if let url = URL(string: "https://www.maxi80.com/don.htm") {
             UIApplication.shared.openURL(url)
         }
     }
