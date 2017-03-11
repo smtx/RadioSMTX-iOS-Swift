@@ -27,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //TODO fetch these data from an API call on api.maxi80.net
         station = RadioStation(
             name: "Maxi80",
-            streamURL: "http://audio1.maxi80.com",
+            streamURL: "https://audio1.maxi80.com",
             imageURL: "station-maxi80.png",
             desc: "La radio de toute une génération",
             longDesc: "Le meilleur de la musique des années 80"
