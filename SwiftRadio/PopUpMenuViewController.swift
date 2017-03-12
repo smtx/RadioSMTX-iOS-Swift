@@ -61,7 +61,7 @@ class PopUpMenuViewController: UIViewController {
     @IBAction func donateButtonDidTouch(_ sender: UIButton) {
         
         // Use your own website here
-        if let url = URL(string: "https://www.maxi80.com/don.htm") {
+        if let url = URL(string: "https://www.maxi80.com/paypal.htm") {
             UIApplication.shared.openURL(url)
         }
     }
