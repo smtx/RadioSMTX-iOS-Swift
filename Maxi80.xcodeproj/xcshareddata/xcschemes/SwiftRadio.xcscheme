@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0700"
+   LastUpgradeVersion = "0800"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9409E1151ABF6FEA00312E2B"
-               BuildableName = "SwiftRadio.app"
-               BlueprintName = "SwiftRadio"
-               ReferencedContainer = "container:SwiftRadio.xcodeproj">
+               BuildableName = "Maxi80.app"
+               BlueprintName = "Maxi80"
+               ReferencedContainer = "container:Maxi80.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,14 +28,24 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "2C5545B91C1124DE00728469"
+               BuildableName = "Maxi80UITests.xctest"
+               BlueprintName = "Maxi80UITests"
+               ReferencedContainer = "container:Maxi80.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9409E1151ABF6FEA00312E2B"
-            BuildableName = "SwiftRadio.app"
-            BlueprintName = "SwiftRadio"
-            ReferencedContainer = "container:SwiftRadio.xcodeproj">
+            BuildableName = "Maxi80.app"
+            BlueprintName = "Maxi80"
+            ReferencedContainer = "container:Maxi80.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +66,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9409E1151ABF6FEA00312E2B"
-            BuildableName = "SwiftRadio.app"
-            BlueprintName = "SwiftRadio"
-            ReferencedContainer = "container:SwiftRadio.xcodeproj">
+            BuildableName = "Maxi80.app"
+            BlueprintName = "Maxi80"
+            ReferencedContainer = "container:Maxi80.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9409E1151ABF6FEA00312E2B"
-            BuildableName = "SwiftRadio.app"
-            BlueprintName = "SwiftRadio"
-            ReferencedContainer = "container:SwiftRadio.xcodeproj">
+            BuildableName = "Maxi80.app"
+            BlueprintName = "Maxi80"
+            ReferencedContainer = "container:Maxi80.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
