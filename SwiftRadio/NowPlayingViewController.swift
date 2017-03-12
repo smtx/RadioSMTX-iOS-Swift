@@ -458,7 +458,7 @@ class NowPlayingViewController: UIViewController {
     //*****************************************************************
         
     @IBAction func shareButtonPressed(_ sender: UIButton) {
-        let songToShare = "I'm listening to \(track.title) on \(currentStation.stationName) via Swift Radio Pro"
+        let songToShare = "I'm listening to \(track.title) on \(currentStation.stationName) via Maxi80 for iOS"
         let activityViewController = UIActivityViewController(activityItems: [songToShare, track.artworkImage!], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
