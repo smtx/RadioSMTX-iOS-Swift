@@ -43,7 +43,7 @@ class NowPlayingViewController: UIViewController {
     var justBecameActive = false
     var newStation = true
     var nowPlayingImageView: UIImageView!
-    let radioPlayer = Player.radio
+    var radioPlayer = AVPlayer()
     var track: Track!
     var mpVolumeSlider = UISlider()
     
@@ -61,7 +61,7 @@ class NowPlayingViewController: UIViewController {
         
         // Add your radio station information here:
         let theApp = UIApplication.shared.delegate as! AppDelegate
-        currentStation =  theApp.station //query raio station details from App Delegae
+        currentStation =  theApp.station //query radio station details from App Delegae
             
         // Set AlbumArtwork Constraints
         optimizeForDeviceSize()
@@ -72,25 +72,13 @@ class NowPlayingViewController: UIViewController {
         // Create Now Playing BarItem
         createNowPlayingAnimation()
         
-        // Setup MPMoviePlayerController
-        // If you're building an app for a client, you may want to
-        // replace the MediaPlayer player with a more robust 
-        // streaming library/SDK. Preferably one that supports interruptions, etc.
-        // Most of the good streaming libaries are in Obj-C, however they
-        // will work nicely with this Swift code. There is a branch using RadioKit if 
-        // you need an example of how nicely this code integrates with libraries.
+        // Setup AVPlayer
         setupPlayer()
         
         // Notification for when app becomes active
         NotificationCenter.default.addObserver(self,
             selector: #selector(NowPlayingViewController.didBecomeActiveNotificationReceived),
             name: Notification.Name("UIApplicationDidBecomeActiveNotification"),
-            object: nil)
-        
-        // Notification for MediaPlayer metadata updated
-        NotificationCenter.default.addObserver(self,
-            selector: #selector(NowPlayingViewController.metadataUpdated),
-            name: Notification.Name.MPMoviePlayerTimedMetadataUpdated,
             object: nil)
         
         // Notification for AVAudioSession Interruption (e.g. Phone call)
@@ -132,9 +120,6 @@ class NowPlayingViewController: UIViewController {
             name: Notification.Name("UIApplicationDidBecomeActiveNotification"),
             object: nil)
         NotificationCenter.default.removeObserver(self,
-            name: Notification.Name.MPMoviePlayerTimedMetadataUpdated,
-            object: nil)
-        NotificationCenter.default.removeObserver(self,
             name: Notification.Name.AVAudioSessionInterruption,
             object: AVAudioSession.sharedInstance())
     }
@@ -143,14 +128,21 @@ class NowPlayingViewController: UIViewController {
     // MARK: - Setup
     //*****************************************************************
     
-    func setupPlayer() {
-        radioPlayer.view.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
-        radioPlayer.view.sizeToFit()
-        radioPlayer.movieSourceType = MPMovieSourceType.streaming
-        radioPlayer.isFullscreen = false
-        radioPlayer.shouldAutoplay = true
-        radioPlayer.prepareToPlay()
-        radioPlayer.controlStyle = MPMovieControlStyle.none
+    func setupPlayer(){
+        radioPlayer.rate = 1
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(self.playerItemDidReachEnd),
+            name: NSNotification.Name.AVPlayerItemDidPlayToEndTime,
+            object: self.radioPlayer.currentItem
+        )
+        
+    }
+    
+    func resetPlayer(){
+        if radioPlayer != nil {
+            NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.radioPlayer.currentItem)
+        }
     }
   
     func setupVolumeSlider() {
@@ -171,13 +163,27 @@ class NowPlayingViewController: UIViewController {
     }
     
     func stationDidChange() {
-        radioPlayer.stop()
+        resetPlayer()
         
-        radioPlayer.contentURL = URL(string: currentStation.stationStreamURL)
-        radioPlayer.prepareToPlay()
-        radioPlayer.play()
+        guard let streamURL = URL(string: currentStation.stationStreamURL) else {
+            if kDebugLog {
+                print("Stream Error \(currentStation.stationStreamURL)")
+            }
+            return
+        }
+        
+        let streamItem = CustomAVPlayerItem(url: streamURL)
+        streamItem.delegate = self
+        
+        DispatchQueue.main.async {
+            // prevent the player from "stalling"
+            self.radioPlayer.replaceCurrentItem(with: streamItem)
+            self.radioPlayer.play()
+        }
         
         updateLabels(statusMessage: "Loading Station...")
+        
+        print("stationDidChange \(currentStation.stationStreamURL)")
         
         // songLabel animate
         songLabel.animation = "flash"
@@ -185,7 +191,6 @@ class NowPlayingViewController: UIViewController {
         songLabel.animate()
         
         resetAlbumArtwork()
-        
         track.isPlaying = true
     }
     
@@ -512,72 +517,6 @@ class NowPlayingViewController: UIViewController {
     }
     
     //*****************************************************************
-    // MARK: - MetaData Updated Notification
-    //*****************************************************************
-    
-    func metadataUpdated(n: NSNotification)
-    {
-        if(radioPlayer.timedMetadata != nil && radioPlayer.timedMetadata.count > 0)
-        {
-            startNowPlayingAnimation()
-            
-            let firstMeta: MPTimedMetadata = radioPlayer.timedMetadata.first as! MPTimedMetadata
-            let metaData = firstMeta.value as! String
-            
-            var stringParts = [String]()
-            if metaData.range(of: " - ") != nil {
-                stringParts = metaData.components(separatedBy: " - ")
-            } else {
-                stringParts = metaData.components(separatedBy: "-")
-            }
-            
-            // Set artist & songvariables
-            let currentSongName = track.title
-            track.artist = stringParts[0]
-            track.title = stringParts[0]
-            
-            if stringParts.count > 1 {
-                track.title = stringParts[1]
-            }
-            
-            if track.artist == "" && track.title == "" {
-                track.artist = currentStation.stationDesc
-                track.title = currentStation.stationName
-            }
-            
-            DispatchQueue.main.async(execute: {
-                
-                if currentSongName != self.track.title {
-                    
-                    if kDebugLog {
-                        print("METADATA artist: \(self.track.artist) | title: \(self.track.title)")
-                    }
-                    
-                    // Update Labels
-                    self.artistLabel.text = self.track.artist
-                    self.songLabel.text = self.track.title
-                    self.updateUserActivityState(self.userActivity!)
-                    
-                    // songLabel animation
-                    self.songLabel.animation = "zoomIn"
-                    self.songLabel.duration = 1.5
-                    self.songLabel.damping = 1
-                    self.songLabel.animate()
-                    
-                    // Update Stations Screen
-                    self.delegate?.songMetaDataDidUpdate(track: self.track)
-                    
-                    // Query API for album art
-                    self.resetAlbumArtwork()
-                    self.queryAlbumArt()
-                    self.updateLockScreen()
-                    
-                }
-            })
-        }
-    }
-    
-    //*****************************************************************
     // MARK: - AVAudio Sesssion Interrupted
     //*****************************************************************
     
@@ -618,6 +557,78 @@ class NowPlayingViewController: UIViewController {
         super.updateUserActivityState(activity)
     }
     
+    //*****************************************************************
+    // MARK: - Detect end of mp3 in case you're using a file instead of a stream
+    //*****************************************************************
+    
+    func playerItemDidReachEnd(){
+        if kDebugLog {
+            print("playerItemDidReachEnd")
+        }
+    }
+    
+}
+
+//*****************************************************************
+// MARK: - AVPlayerItem Delegate (for metadata)
+//*****************************************************************
+extension NowPlayingViewController: CustomAVPlayerItemDelegate {
+    func onMetaData(_ metaData: [AVMetadataItem]?) {
+        if let metaDatas = metaData{
+            startNowPlayingAnimation()
+            let firstMeta: AVMetadataItem = metaDatas.first!
+            let metaData = firstMeta.value as! String
+            var stringParts = [String]()
+            if metaData.range(of: " - ") != nil {
+                stringParts = metaData.components(separatedBy: " - ")
+            } else {
+                stringParts = metaData.components(separatedBy: "-")
+            }
+            
+            // Set artist & songvariables
+            let currentSongName = track.title
+            track.artist = stringParts[0].decodeAll()
+            track.title = stringParts[0].decodeAll()
+            
+            if stringParts.count > 1 {
+                track.title = stringParts[1].decodeAll()
+            }
+            
+            if track.artist == "" && track.title == "" {
+                track.artist = currentStation.stationDesc
+                track.title = currentStation.stationName
+            }
+            
+            DispatchQueue.main.async {
+                if currentSongName != self.track.title {
+                    if kDebugLog {
+                        print("METADATA artist: \(self.track.artist) | title: \(self.track.title)")
+                    }
+                    // Update Labels
+                    self.artistLabel.text = self.track.artist
+                    self.songLabel.text = self.track.title
+                    self.updateUserActivityState(self.userActivity!)
+                    
+                    // songLabel animation
+                    self.songLabel.animation = "zoomIn"
+                    self.songLabel.duration = 1.5
+                    self.songLabel.damping = 1
+                    self.songLabel.animate()
+                    
+                    // Update Stations Screen
+                    self.delegate?.songMetaDataDidUpdate(track: self.track)
+                    
+                    // Query API for album art
+                    self.resetAlbumArtwork()
+                    self.queryAlbumArt()
+                    
+                }
+                self.artistLabel.text = self.track.artist
+                self.songLabel.text = self.track.title
+                
+            }
+        }
+    }
 }
 
 //*****************************************************************
