@@ -58,6 +58,14 @@ class PopUpMenuViewController: UIViewController {
         }
     }
         
+    @IBAction func lastFMButtonDidTouch(_ sender: UIButton) {
+        
+        // Use your own website here
+        if let url = URL(string: "https://www.last.fm") {
+            UIApplication.shared.openURL(url)
+        }
+    }
+
     @IBAction func donateButtonDidTouch(_ sender: UIButton) {
         
         // Use your own website here

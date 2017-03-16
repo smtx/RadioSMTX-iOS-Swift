@@ -183,6 +183,7 @@
 		9409E1191ABF6FEA00312E2B /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0081BD4D1E76CCF500CBA522 /* CustomAVPlayerItem.swift */,
 				00F5AFE31E74270200DB8B4A /* Extension.swift */,
 				9409E11A1ABF6FEA00312E2B /* Info.plist */,
 				94D260901B45D20000DE671C /* Maxi80-Settings.swift */,
@@ -271,7 +272,6 @@
 			children = (
 				94AC70AD1AD05C6200652982 /* RadioStation.swift */,
 				94D260971B45E8B800DE671C /* Track.swift */,
-				0081BD4D1E76CCF500CBA522 /* CustomAVPlayerItem.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";

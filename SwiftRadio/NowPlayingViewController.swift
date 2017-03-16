@@ -140,9 +140,7 @@ class NowPlayingViewController: UIViewController {
     }
     
     func resetPlayer(){
-        if radioPlayer != nil {
-            NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.radioPlayer.currentItem)
-        }
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: self.radioPlayer.currentItem)
     }
   
     func setupVolumeSlider() {
@@ -573,9 +571,13 @@ class NowPlayingViewController: UIViewController {
 // MARK: - AVPlayerItem Delegate (for metadata)
 //*****************************************************************
 extension NowPlayingViewController: CustomAVPlayerItemDelegate {
+    
     func onMetaData(_ metaData: [AVMetadataItem]?) {
-        if let metaDatas = metaData{
+    
+        if let metaDatas = metaData {
+            
             startNowPlayingAnimation()
+            
             let firstMeta: AVMetadataItem = metaDatas.first!
             let metaData = firstMeta.value as! String
             var stringParts = [String]()
