@@ -15,37 +15,27 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "9409E1151ABF6FEA00312E2B"
-               BuildableName = "Maxi80.app"
-               BlueprintName = "Maxi80"
-               ReferencedContainer = "container:Maxi80.xcodeproj">
+               BuildableName = "FMdelaMontana.app"
+               BlueprintName = "FMdelaMontana"
+               ReferencedContainer = "container:FMdelaMontana.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
       buildConfiguration = "Debug"
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES">
+      selectedDebuggerIdentifier = ""
+      selectedLauncherIdentifier = "Xcode.IDEFoundation.Launcher.PosixSpawn"
+      shouldUseLaunchSchemeArgsEnv = "NO">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2C5545B91C1124DE00728469"
-               BuildableName = "Maxi80UITests.xctest"
-               BlueprintName = "Maxi80UITests"
-               ReferencedContainer = "container:Maxi80.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9409E1151ABF6FEA00312E2B"
-            BuildableName = "Maxi80.app"
-            BlueprintName = "Maxi80"
-            ReferencedContainer = "container:Maxi80.xcodeproj">
+            BuildableName = "FMdelaMontana.app"
+            BlueprintName = "FMdelaMontana"
+            ReferencedContainer = "container:FMdelaMontana.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -66,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9409E1151ABF6FEA00312E2B"
-            BuildableName = "Maxi80.app"
-            BlueprintName = "Maxi80"
-            ReferencedContainer = "container:Maxi80.xcodeproj">
+            BuildableName = "FMdelaMontana.app"
+            BlueprintName = "FMdelaMontana"
+            ReferencedContainer = "container:FMdelaMontana.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -85,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "9409E1151ABF6FEA00312E2B"
-            BuildableName = "Maxi80.app"
-            BlueprintName = "Maxi80"
-            ReferencedContainer = "container:Maxi80.xcodeproj">
+            BuildableName = "FMdelaMontana.app"
+            BlueprintName = "FMdelaMontana"
+            ReferencedContainer = "container:FMdelaMontana.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
@@ -96,6 +86,7 @@
    </AnalyzeAction>
    <ArchiveAction
       buildConfiguration = "Release"
+      customArchiveName = "FMdelaMontana"
       revealArchiveInOrganizer = "YES">
    </ArchiveAction>
 </Scheme>
