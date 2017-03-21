@@ -92,7 +92,7 @@ class SwiftRadioUITests: XCTestCase {
     func waitForStationToLoad() {
         self.expectation(
             for: NSPredicate(format: "exists == 0"),
-            evaluatedWith: app.staticTexts["Loading Station..."],
+            evaluatedWith: app.staticTexts[""],
             handler: nil)
         self.waitForExpectations(timeout: 25.0, handler: nil)
 

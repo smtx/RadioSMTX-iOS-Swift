@@ -38,7 +38,7 @@ class PopUpMenuViewController: UIViewController {
         backgroundView.addGestureRecognizer(gestureRecognizer)
         
         // Set version from bundle info
-        versionLabel.text = "Maxi 80 for iOS v\(Bundle.main.versionNumber ?? "") (\(Bundle.main.buildNumber ?? ""))"
+        versionLabel.text = "App FM de la Montaña para iOS v\(Bundle.main.versionNumber ?? "") (\(Bundle.main.buildNumber ?? ""))"
     }
     
     //*****************************************************************
@@ -53,7 +53,7 @@ class PopUpMenuViewController: UIViewController {
     @IBAction func websiteButtonDidTouch(_ sender: UIButton) {
         
         // Use your own website here
-        if let url = URL(string: "https://www.maxi80.com") {
+        if let url = URL(string: "https://www.fmdelamontana.com.ar") {
             UIApplication.shared.openURL(url)
         }
     }

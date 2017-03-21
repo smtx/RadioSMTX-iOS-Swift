@@ -179,7 +179,7 @@ class NowPlayingViewController: UIViewController {
             self.radioPlayer.play()
         }
         
-        updateLabels(statusMessage: "Loading Station...")
+        updateLabels(statusMessage: "")
         
         print("stationDidChange \(currentStation.stationStreamURL)")
         
@@ -461,7 +461,7 @@ class NowPlayingViewController: UIViewController {
     //*****************************************************************
         
     @IBAction func shareButtonPressed(_ sender: UIButton) {
-        let songToShare = "I'm listening to \(track.title) on \(currentStation.stationName) via Maxi80 for iOS"
+        let songToShare = "Estoy escuchando FM de la Montaña desde su APP para iOS"
         let activityViewController = UIActivityViewController(activityItems: [songToShare, track.artworkImage!], applicationActivities: nil)
         present(activityViewController, animated: true, completion: nil)
     }
@@ -469,8 +469,8 @@ class NowPlayingViewController: UIViewController {
     @IBAction func emailButtonDidTouch(_ sender: UIButton) {
         
         // Use your own email address & subject
-        let receipients = ["seb@maxi80.com"]
-        let subject = "From Maxi80 iOS"
+        let receipients = ["info@fmdelamontana.com.ar"]
+        let subject = "Desde App iOS"
         let messageBody = ""
         
         let configuredMailComposeViewController = configureMailComposeViewController(recepients: receipients, subject: subject, messageBody: messageBody)

@@ -26,11 +26,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //initialize radio station data
         //TODO fetch these data from an API call on api.maxi80.net
         station = RadioStation(
-            name: "Maxi80",
-            streamURL: "https://audio1.maxi80.com",
+            name: "FM de la Montaña",
+            streamURL: "http://fmdelamontana.ddns.net:8000/;?type=http&nocache=2",
             imageURL: "station-maxi80.png",
-            desc: "La radio de toute une génération",
-            longDesc: "Le meilleur de la musique des années 80"
+            desc: "La FM de San Martin de los Andes",
+            longDesc: "Somos una radio libre, democrática, una radio para todos y con un respeto por los demás, por los que piensan igual, por los que piensan distinto."
         )
         
         // Set AVFoundation category, required for background audio
